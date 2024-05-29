@@ -1,0 +1,46 @@
+/*
+:host é um seletor especial que se refere ao componente em que está sendo usado.
+é usado para aplicar estilos diretamente ao componente em si, em vez dos elementos filhos.
+pode se definir estilos especificos para o componente raiz.
+*/
+
+:host{
+    h2{
+        background: red;
+    }
+}
+
+/*
+:host-context() ele é um seletor que permite aplicar estilos com base no contexto do componente pai
+isso é util quando deseja aplicar estilos com base em condições do componente pai 
+ex: pode alterar a cor de fundo de um componente filho com base em um valor definido
+pelo componente pai
+*/
+
+:host-context(.theme-dark){
+    h2{
+        background: #000;
+        color: #FFF;
+    }
+}
+
+:host-context(.theme-red){
+    h2{
+        background: red;
+        
+    }
+}
+
+/*
+::ng-deep é um mecanismo que permite que os estilos definidos em um componente sejam aplicados
+nos elementos. Permite que contorne o encapsulamento de estilos em componentes.
+
+É importante notar que o uso excessivo de ::ng-deep pode tornar o código mais dificil 
+de manter e pode não ser a melhor prática em muitos casos
+*/
+
+::ng-deep{
+    .theme-red{
+        border: 5px solid blue;
+    }
+}
