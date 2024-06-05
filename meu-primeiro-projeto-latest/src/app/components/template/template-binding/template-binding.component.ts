@@ -12,7 +12,7 @@ export class TemplateBindingComponent {
   public name = 'Bianca';
   public age=28;
   public condition = this.age > 1 ? 'teste 1' : 'teste 2';
-  public isDesabled = false;
+  public isDesabled = true;
   //  public srcValue = 
   // 'https://devbiagabriel.wordpress.com/wp-content/uploads/2013/03/bia.jpg?w=640';
   
