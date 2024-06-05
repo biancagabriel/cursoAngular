@@ -15,7 +15,7 @@ export class TemplateBindingComponent {
   public isDesabled = true;
   //  public srcValue = 
   // 'https://devbiagabriel.wordpress.com/wp-content/uploads/2013/03/bia.jpg?w=640';
-  
+  public isTextDecoration = this.age >=28 ? 'underline' : 'none';
   public sum(val1:number,val2:number){
     return val1 + val2;
   }

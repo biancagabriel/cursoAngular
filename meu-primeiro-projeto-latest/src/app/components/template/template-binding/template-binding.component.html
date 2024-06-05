@@ -14,3 +14,8 @@
 <h2>Attribute binding</h2>
 <!-- <element [attr.attribute-you-are-targeting]='value'</element> -->
 <p [attr.title]="name" [attr.aria-label] = "name">Bianca Gabriel</p>
+<hr/>
+
+<h2>Class and Style Binding</h2>
+<p [class.background-red] = "age>=27" [class.background-blue] = "age >20">{{ name }}</p>
+<p [style.text-decoration]="isTextDecoration">{{age}}</p>
