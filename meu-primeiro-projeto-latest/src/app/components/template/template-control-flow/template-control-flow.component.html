@@ -1,15 +1,26 @@
 <h2> Control Flow </h2>
-<h3>IF</h3>
+<h3>IF, FOR</h3>
 <!-- forma nova-->
-@if(isTrue){
-    <p>Bianca</p>
-    <p>maria</p>
+@if(loadingData$ | async; as data){
+    <ul>
+        @for(item of data; track item){
+            <li>{{item}}</li>
+        }
+        
+    </ul>
 }@else{
-    Não está certo
+    <p>carregando...</p>
+}
+
+@for(item of loadingData$ | async; track item){
+    <li>{{item}}</li>
 }
 <!-- forma antiga-->
-<ng-container *ngIf="isTrue;else isFalse">
-    <p>Bianca</p>
-    <p>maria</p>
+<ng-container *ngIf="loadingData$ | async as data; else loading">
+    <ul>
+        <ng-container *ngFor="let item of data; trackBy: trackByFn">
+            <li>{{item}}</li>
+        </ng-container>
+    </ul>
 </ng-container>
-<ng-template #isFalse> Não está correto</ng-template>
+<ng-template #loading> <p>carregando...</p></ng-template>
