@@ -32,10 +32,19 @@
 <input (keydown.shift.t)="onKeyDown($event)"> 
 
 <div 
-style="background: red; width: 300px; height: 300px; margin-top: 10px;"
+style="background: red; width: 30px; height: 30px; margin-top: 10px;"
 (mousemove)="onMouseMove($event)"
 ></div>
 <hr/>
 <h3>Two-way binding</h3>
 <input [(ngModel)]="name">
 {{name}}
+
+<hr/>
+<h3>Diretivas de atributo</h3>
+<div [ngClass]="{ 'background-red': age>27,'background-blue': age < 30}">Classes condicionais</div>
+
+<div [ngStyle] = "{
+    color: age > 28 ? 'green': 'red',
+    'font-size': age > 28 ? '10px' : '20px',
+}">Estilo dinamico</div>

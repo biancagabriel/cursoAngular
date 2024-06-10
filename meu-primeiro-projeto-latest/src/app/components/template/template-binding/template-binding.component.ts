@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-template-binding',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, NgClass,FormsModule],
   templateUrl: './template-binding.component.html',
   styleUrl: './template-binding.component.scss'
 })
