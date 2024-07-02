@@ -12,7 +12,7 @@ import { Observable, delay, of } from 'rxjs';
 export class TemplateControlFlowComponent {
   public isTrue = true;
 
-  public itens= [{name: 'bianca gabriel'}];
+  public itens: Array<{name: string}>= [{name: 'bianca gabriel'}];
   public loadingData$: Observable<string[]> = of([
     'item 1',
     'item 2',
