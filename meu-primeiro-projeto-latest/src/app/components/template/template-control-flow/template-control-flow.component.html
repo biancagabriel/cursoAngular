@@ -1,5 +1,5 @@
 <h2> Control Flow </h2>
-<h3>IF, FOR</h3>
+<h3>IF, FOR, SWITCH CASE</h3>
 <!-- forma nova-->
 <!--@for(
     item of itens; track item.name;
@@ -45,17 +45,17 @@
 <button (click)="addNewName(name.value)">Add Name</button>-->
 
 <!-- nova forma -->
-<ul>
+<!--<ul>
     @for(item of itens; track item.name){
         <li>{{item.name}}</li>
     }@empty{
         <li>não tem valores</li>
     }
- </ul>
+ </ul> -->
 
 <!-- forma antiga -->
-<ul>
-<ng-container *ngIf="itens.length === 0; else itensExist">
+<!--<ul>
+<ng-container *ngIf="itens.length === 0; else itensExist"> 
     <li>não tem valores</li>
  </ng-container>
  <ng-template #itensExist>
@@ -65,4 +65,31 @@
         </li>
     </ng-container>
  </ng-template>
- </ul>
+ </ul> -->
+
+ <!-- SWITCH -->
+<!-- nova forma -->
+@switch(switchCondition){
+    @case ('A'){
+        <p> sim, sua letra é:A</p>
+    }
+    @case ('B'){
+        <p> sim, sua letra é:B</p>
+    }
+    @default{
+        <p>Os dados não foram encontrados</p>
+    }
+}
+
+<!-- forma antiga-->
+ <ng-container [ngSwitch] = "switchCondition">
+    <ng-container *ngSwitchCase = "'A'">
+        <p> sim, sua letra é:A</p>
+    </ng-container>
+    <ng-container *ngSwitchCase = "'B'">
+        <p> sim, sua letra é:B</p>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+        <p>Os dados não foram encontrados</p>
+    </ng-container>
+ </ng-container>
